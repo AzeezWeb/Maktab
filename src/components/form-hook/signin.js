@@ -13,16 +13,16 @@ const SignIn = () => {
 	const handleInputPasswordChange = e => setInputPassword(e.target.value);
 	function errorMessageExample() {
     if(input !== '' && inputPassword !== '') 
-    navigate('/pages')
+    navigate('/Sinflar')
     }
 	
 
 	return (
-		<Flex maxH={'100vh'} maxW={'100wh'} overflow={'hidden'}>
+		<Flex boxShadow={'0px 7px 63px 0px rgba(34, 60, 80, 0.2)'} maxH={'550px'} maxW={'1000px'} m={'55px auto'} overflow={'hidden'}>
 			<Box>
 				<Image w={'100%'} h={'100hv'} src='login.svg' alt='Dan Abramov' />
 			</Box>
-			<Container pt={'80px'}>
+			<Container pt={'80px'} pl={'10px'}>
 				<Heading textAlign={'center'} color={'#002540'} pb={'30px'}>
 					Kirish
 				</Heading>
@@ -89,7 +89,7 @@ const SignIn = () => {
 						Kirish
 					</Button>
 				</FormControl>
-        <Text textAlign='center' color={'#B6B6B6'} mt={'230px'} >Copyright © 2021 of Tashkent Scholl of Sodiq</Text>
+        <Text textAlign='center' color={'#B6B6B6'} position={'absolute'} bottom={'5px'} right={'24%'}>Copyright © 2021 of Tashkent Scholl of Sodiq</Text>
 			</Container>
 		</Flex>
 	);
