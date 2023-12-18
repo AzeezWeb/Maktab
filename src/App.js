@@ -2,7 +2,6 @@ import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import SignIn from './components/form-hook/signin';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './layout/layout';
 import Classes from './pages/classes/classes';
 import Teachers from './pages/teachers/teachers';
 import Students from './pages/students/students';
@@ -10,7 +9,6 @@ import Sciences from './pages/sciences/sciences';
 import LessonSchedule from './pages/lessonSchedule/lessonSchedule';
 import Journal from './pages/journal/journal';
 import Kpi from './pages/kpi/kpi';
-// import Layout from './layout/layout';
 function App() {
   return (
     <ChakraProvider>
@@ -31,3 +29,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

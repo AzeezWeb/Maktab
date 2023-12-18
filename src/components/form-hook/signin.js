@@ -13,7 +13,7 @@ const SignIn = () => {
 	const handleInputPasswordChange = e => setInputPassword(e.target.value);
 	function errorMessageExample() {
     if(input !== '' && inputPassword !== '') 
-    navigate('/Sinflar')
+    navigate('/classes')
     }
 	
 
