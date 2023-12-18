@@ -8,31 +8,38 @@ import { GrDocumentConfig } from "react-icons/gr";
 
 export  const sidebarItems = [
   {
-    link: 'Sinflar',
+    name: 'Sinflar',
     icon: PiUsersThreeLight,
+    link: 'classes',
   },
   {
-    link: "O'qituvchilar",
+    name: "O'qituvchilar",
     icon: LiaChalkboardTeacherSolid,
+    link: 'teachers',
   },
   {
-    link: "O'quvchilar",
+    name: "O'quvchilar",
     icon: CiUser,
+    link:'students',
   },
   {
-    link: 'Fanlar',
+    name: 'Fanlar',
     icon: SlBookOpen,
+    link: 'sciences',
   },
   {
-    link: 'Dars jadval',
+    name: 'Dars jadval',
     icon: BiDetail,
+    link: 'lessonSchedule',
   },
   {
-    link: 'Jurnal',
+    name: 'Jurnal',
     icon: IoDocumentTextOutline,
+    link: 'journal',
   },
   {
-    link: 'KPI',
+    name: 'KPI',
     icon: GrDocumentConfig,
+    link: 'kpi',
   },
 ]
