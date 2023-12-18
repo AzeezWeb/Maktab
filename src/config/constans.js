@@ -13,37 +13,37 @@ import RusIcon from './../icons/rus.svg'
 
 export  const sidebarItems = [
   {
-    name: 'Sinflar',
+    name: "sidebar_title_1",
     icon: PiUsersThreeLight,
     link: 'classes',
   },
   {
-    name: "O'qituvchilar",
+    name: "sidebar_title_2",
     icon: LiaChalkboardTeacherSolid,
     link: 'teachers',
   },
   {
-    name: "O'quvchilar",
+    name: "sidebar_title_3",
     icon: CiUser,
     link:'students',
   },
   {
-    name: 'Fanlar',
+    name: "sidebar_title_4",
     icon: SlBookOpen,
     link: 'sciences',
   },
   {
-    name: 'Dars jadval',
+    name: "sidebar_title_5",
     icon: BiDetail,
     link: 'lessonSchedule',
   },
   {
-    name: 'Jurnal',
+    name: "sidebar_title_6",
     icon: IoDocumentTextOutline,
     link: 'journal',
   },
   {
-    name: 'KPI',
+    name: "sidebar_title_7",
     icon: GrDocumentConfig,
     link: 'kpi',
   },

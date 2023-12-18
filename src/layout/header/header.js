@@ -22,16 +22,24 @@ import { CiDark } from 'react-icons/ci';
 import { MdOutlineLightMode } from 'react-icons/md';
 import { FaAngleDown } from 'react-icons/fa';
 import { language, sidebarItems } from '../../config/constans';
-
+import { useTranslation } from 'react-i18next';
 const Header = () => {
 	const location = useLocation();
 	const [languageIcon, setLanguageIcon] = useState(language[0].icon);
+	const { t, i18n } = useTranslation()
+
+	const onLanguage = (lng) => {
+		i18n.changeLanguage(lng.lng);
+		setLanguageIcon(lng.icon)
+	};
 
 	// const active = location.pathname === `/${item.link}`;
 	const active = sidebarItems.some(path => `/${path.link}` === location.pathname);
+	const title = sidebarItems.filter(path => `/${path.link}` === location.pathname);
 	const { toggleColorMode, colorMode } = useColorMode();
-	console.log(toggleColorMode);
-	console.log(colorMode);
+
+	console.log(title);
+
 	return (
 		<Flex
 			bg={useColorModeValue('#fff', '#2D3D48')}
@@ -46,12 +54,12 @@ const Header = () => {
 		>
 			<HStack>
 				{!active ? <Icon as={FaChevronLeft} /> : null}
-				<Heading fontSize={'20px'}>Sinflar </Heading>
+				<Heading fontSize={'20px'}>{t(title[0].name)} </Heading>
 			</HStack>
 			<HStack>
 				<HStack w={'386px'} h={'37px'} borderRadius={'50px'} pl={'15px'} bg={useColorModeValue( '#F0F0F0', '#172833' )} overflow={'hidden'}>
 					<Icon as={CiSearch} color={'#9E99A6'} fontSize={'40px'} pr={'15px'} borderRight={'1px'} />
-					<Input type='email' placeholder='Qidirish' variant={'unstyled'} />
+					<Input type='email' placeholder={t('header_search_input')} variant={'unstyled'} />
 				</HStack>
 				{active ? (
 					<>
@@ -76,7 +84,7 @@ const Header = () => {
 							</MenuButton>
 							<MenuList>
 								{language.map((item, ind) => (
-									<MenuItem key={ind} onClick={() => setLanguageIcon(item.icon)}>
+									<MenuItem key={ind} onClick={() => onLanguage(item)}>
 										<Image src={item.icon} alt={'Icon'} w={'40px'} h={'40px'} pr={'10px'} /> {item.nativeLng}
 									</MenuItem>
 								))}

@@ -1,11 +1,17 @@
 import { Box, Button, Container, Flex, Heading, Icon, Image, Input, Text, useColorModeValue } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import { FormControl } from '@chakra-ui/react';
 import { CiUser } from 'react-icons/ci';
 import { CiLock } from 'react-icons/ci';
 import {  useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 const SignIn = () => {
+
+	const { t } = useTranslation()
+
+
 	const [input, setInput] = useState('');
 	const [inputPassword, setInputPassword] = useState('');
   const navigate =useNavigate()
@@ -24,7 +30,7 @@ const SignIn = () => {
 			</Box>
 			<Container pt={'80px'} pl={'10px'}>
 				<Heading textAlign={'center'} color={useColorModeValue('#002540', '#0094FF')} pb={'30px'}>
-					Kirish
+					{t("login", {ns: 'translate'})}
 				</Heading>
 
 				<FormControl>
@@ -80,15 +86,16 @@ const SignIn = () => {
 					<Button
 						bg={useColorModeValue('#002540', '#0094FF')}
 						w={'495px'}
+						h={'60px'}
+						fontSize={'22px'}
 						borderRadius='12px'
 						mt={'70px'}
-						h={'60px'}
 						color={'#fff'}
 						textAlign={'center'}
             _hover={'none'}
 						onClick={errorMessageExample}
 					>
-						Kirish
+						{t("login", {ns: 'translate'})}
 					</Button>
 				</FormControl>
         <Text textAlign='center' color={'#B6B6B6'} position={'absolute'} bottom={'5px'} right={'24%'}>Copyright © 2021 of Tashkent Scholl of Sodiq</Text>
