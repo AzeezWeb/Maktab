@@ -1,12 +1,16 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import Sidebar from './sidebar/sidebar';
+import Header from './header/header';
 
 const Layout = ({ children }) => {
 	return (
-		<Flex w={'1440px'} m={' 0 auto'} gap={'15px'} bg={'#F1F5F8'} overflow={'hidden'}>
+		<Flex w={'1440px'} m={' 0 auto'} gap={'15px'}  bg={useColorModeValue('#f1f5f8', '#172833')}overflow={'hidden'}>
 			<Sidebar />
-			<Box>{children}</Box>
+			<Box >
+				<Header/>
+				{children}
+			</Box>
 		</Flex>
 	);
 };

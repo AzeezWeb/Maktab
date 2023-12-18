@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, HStack, Heading, Icon, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { Box, Divider, HStack, Heading, Icon, Image, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { CiLogin } from 'react-icons/ci';
 import { sidebarItems } from '../../config/constans';
 import { useLocation } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 const Sidebar = () => {
 	const router = useLocation();
 	return (
-		<Box w={'400px'} height={'100vh'} bg={'#002540'}>
+		<Box w={'400px'} height={'100vh'} bg={useColorModeValue('#002540', '#0B1C27')}>
 			<HStack spacing={'20px'} p={'15px'} mb={'10px'}>
 				<Image w={'52px'} h={'52px'} src='img_avatar1.png' alt='Dan Abramov' />
 				<Stack w={'80%'} spacing={'1px'}>

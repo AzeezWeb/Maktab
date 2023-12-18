@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Heading, Icon, Image, Input, Text } from '@chakra-ui/react';
+import { Box, Button, Container, Flex, Heading, Icon, Image, Input, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FormControl } from '@chakra-ui/react';
 import { CiUser } from 'react-icons/ci';
@@ -18,12 +18,12 @@ const SignIn = () => {
 	
 
 	return (
-		<Flex boxShadow={'0px 7px 63px 0px rgba(34, 60, 80, 0.2)'} maxH={'550px'} maxW={'1000px'} m={'55px auto'} overflow={'hidden'}>
+		<Flex boxShadow={'0px 7px 63px 0px rgba(34, 60, 80, 0.9)'} maxH={'550px'} maxW={'1000px'} m={'55px auto'} overflow={'hidden'} bg={useColorModeValue('#fff', '#1A202C')}>
 			<Box>
 				<Image w={'100%'} h={'100hv'} src='login.svg' alt='Dan Abramov' />
 			</Box>
 			<Container pt={'80px'} pl={'10px'}>
-				<Heading textAlign={'center'} color={'#002540'} pb={'30px'}>
+				<Heading textAlign={'center'} color={useColorModeValue('#002540', '#0094FF')} pb={'30px'}>
 					Kirish
 				</Heading>
 
@@ -36,7 +36,8 @@ const SignIn = () => {
 						borderColor={'#B6B6B6'}
 						borderRadius={'12px'}
 						p={'15px'}
-						mb={'10px'}
+						mb={'20px'}
+						bg={useColorModeValue('#fff', '#2C374C')}
 					>
 						<Icon fontSize={'30px'} color={'#B6B6B6'} pr={'10px'} borderRight={'1px'} borderColor={'#B6B6B6'} as={CiUser} />
 						<Input
@@ -45,7 +46,7 @@ const SignIn = () => {
 							placeholder='Login'
 							_placeholder={{ color: '#B6B6B6' }}
 							pl={'10px'}
-							color={'#002540'}
+							color={useColorModeValue('#002540', '#fff')}
 							value={input}
 							onChange={handleInputChange}
 						/>
@@ -61,6 +62,7 @@ const SignIn = () => {
 						p={'15px'}
 						mt={'10px'}
 						mb={'10px'}
+						bg={useColorModeValue('#fff', '#2C374C')}
 					>
 						<Icon fontSize={'30px'} color={'#B6B6B6'} pr={'10px'} borderRight={'1px'} borderColor={'#B6B6B6'} as={CiLock} />
 						<Input
@@ -69,14 +71,14 @@ const SignIn = () => {
 							placeholder='Parol'
 							_placeholder={{ color: '#B6B6B6' }}
 							pl={'10px'}
-							color={'#002540'}
+							color={useColorModeValue('#002540', '#fff')}
 							value={inputPassword}
 							onChange={handleInputPasswordChange}
 						/>
 					</Flex>
 
 					<Button
-						bg='#002540'
+						bg={useColorModeValue('#002540', '#0094FF')}
 						w={'495px'}
 						borderRadius='12px'
 						mt={'70px'}

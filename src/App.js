@@ -9,9 +9,10 @@ import Sciences from './pages/sciences/sciences';
 import LessonSchedule from './pages/lessonSchedule/lessonSchedule';
 import Journal from './pages/journal/journal';
 import Kpi from './pages/kpi/kpi';
+import theme from './config/theme';
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<SignIn />} />
