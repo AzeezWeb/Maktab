@@ -26,19 +26,16 @@ import { useTranslation } from 'react-i18next';
 const Header = () => {
 	const location = useLocation();
 	const [languageIcon, setLanguageIcon] = useState(language[0].icon);
-	const { t, i18n } = useTranslation()
+	const { t, i18n } = useTranslation();
 
-	const onLanguage = (lng) => {
+	const onLanguage = lng => {
 		i18n.changeLanguage(lng.lng);
-		setLanguageIcon(lng.icon)
+		setLanguageIcon(lng.icon);
 	};
 
-	// const active = location.pathname === `/${item.link}`;
 	const active = sidebarItems.some(path => `/${path.link}` === location.pathname);
-	const title = sidebarItems.filter(path => `/${path.link}` === location.pathname);
+	const title = sidebarItems.filter(path => location.pathname.split('/')[1] === path.link);
 	const { toggleColorMode, colorMode } = useColorMode();
-
-	console.log(title);
 
 	return (
 		<Flex
@@ -46,7 +43,7 @@ const Header = () => {
 			display={'flex'}
 			justifyContent={'space-between'}
 			alignItems={'center'}
-			w={'980px'}
+			w={'1000px'}
 			borderRadius={'150px'}
 			h={'55px'}
 			p={'15px'}
@@ -57,7 +54,14 @@ const Header = () => {
 				<Heading fontSize={'20px'}>{t(title[0].name)} </Heading>
 			</HStack>
 			<HStack>
-				<HStack w={'386px'} h={'37px'} borderRadius={'50px'} pl={'15px'} bg={useColorModeValue( '#F0F0F0', '#172833' )} overflow={'hidden'}>
+				<HStack
+					w={'386px'}
+					h={'37px'}
+					borderRadius={'50px'}
+					pl={'15px'}
+					bg={useColorModeValue('#F0F0F0', '#172833')}
+					overflow={'hidden'}
+				>
 					<Icon as={CiSearch} color={'#9E99A6'} fontSize={'40px'} pr={'15px'} borderRight={'1px'} />
 					<Input type='email' placeholder={t('header_search_input')} variant={'unstyled'} />
 				</HStack>
@@ -69,13 +73,13 @@ const Header = () => {
 							borderRadius={'100%'}
 							alignItems={'center'}
 							justifyContent={'center'}
-							bg={ '#F1F5F8'}
+							bg={'#F1F5F8'}
 							cursor={'pointer'}
 						>
 							{colorMode === 'light' ? (
 								<Icon as={CiDark} onClick={toggleColorMode} fontSize={'25px'} fontWeight={'bold'} color={'#0094FF'} />
 							) : (
-								<Icon as={MdOutlineLightMode}  onClick={toggleColorMode} fontSize={'25px'} fontWeight={'bold'} color={'#0094FF'} />
+								<Icon as={MdOutlineLightMode} onClick={toggleColorMode} fontSize={'25px'} fontWeight={'bold'} color={'#0094FF'} />
 							)}
 						</Card>
 						<Menu>

@@ -3,6 +3,7 @@
 body {
   max-width: 1520px;
   margin: 0 auto;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
