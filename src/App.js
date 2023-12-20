@@ -8,7 +8,7 @@ import LessonSchedule from './pages/lessonSchedule/lessonSchedule';
 import Journal from './pages/journal/journal';
 import Kpi from './pages/kpi/kpi';
 import SignIn from './components/form-hook/signin';
-import ClassesData from './pages/classes/classesData/classesData';
+import ClassInformation from './pages/classes/classInformation/classInformation';
 function App() {
 	return (
 		<Routes>
@@ -20,7 +20,7 @@ function App() {
 			<Route path='lessonSchedule' element={<LessonSchedule />} />
 			<Route path='journal' element={<Journal />} />
 			<Route path='kpi' element={<Kpi />} />
-			<Route path='classes/:id' element={<ClassesData/>} />
+			<Route path='classes/:id' element={<ClassInformation/>} />
 		</Routes>
 	);
 }

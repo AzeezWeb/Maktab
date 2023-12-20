@@ -1,33 +1,34 @@
 import React from 'react';
 import { withLayout } from '../../layout/layout';
-import { Box, Button, Icon, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Icon, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
 import { BsThreeDots } from 'react-icons/bs';
 import { GoPencil } from 'react-icons/go';
 import { data } from '../../data';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Classes = () => {
 	const navigate = useNavigate();
-
+	const { t } = useTranslation();
 	const Link = id => {
 		navigate(`/classes/${id}`);
 	};
 
 	return (
-		<Box w={'1000px'} position={'relative'}>
+		<Box w={'100%'} position={'relative'}>
 			<Button
 				borderRadius={'50px'}
 				bg={'#0094FF'}
 				color={'#fff'}
 				fontSize={'20px'}
-				w={'166px'}
+				minW={'166px'}
 				p={'10px'}
 				textAlign={'center'}
 				position={'absolute'}
 				top={'-50px'}
 				right={'0px'}
 			>
-				+ Sinf qo'shish
+				+ {t('add_classes')}
 			</Button>
 
 			<TableContainer mt={'60px'} bg={useColorModeValue('#fff', '#2C3B46')} borderRadius={'15px'}>
@@ -38,16 +39,16 @@ const Classes = () => {
 								#
 							</Th>
 							<Th w={'50px'} fontSize={'14px'} flexWrap={'500'} color={useColorModeValue('#7BA1BD', '#fff')}>
-								Sinf Nomlari
+								{t('class_name')}
 							</Th>
 							<Th w={'50px'} fontSize={'14px'} flexWrap={'500'} color={useColorModeValue('#7BA1BD', '#fff')}>
-								O'QUCHI SONLARI
+								{t('student_numbers')}
 							</Th>
 							<Th w={'50px'} fontSize={'14px'} flexWrap={'500'} color={useColorModeValue('#7BA1BD', '#fff')}>
-								GURUH
+								{t('group')}
 							</Th>
-							<Th w={'50px'} fontSize={'14px'} flexWrap={'500'} color={useColorModeValue('#7BA1BD', '#fff')}>
-								SINF RAXBARI
+							<Th w={'100px'} fontSize={'14px'} flexWrap={'500'} color={useColorModeValue('#7BA1BD', '#fff')}>
+								{t('head_of_the_class')}
 							</Th>
 							<Th textAlign={'end'}>
 								<Icon as={BsThreeDots} w={'30px'} h={'30px'} color={useColorModeValue('#7BA1BD', '#fff')} />
@@ -57,11 +58,13 @@ const Classes = () => {
 					<Tbody>
 						{data.classes.map((item, ind) => (
 							<Tr cursor={'pointer'} onClick={() => Link(item.id)}>
-								<Td>{data.classes.length}</Td>
-								<Td>{item.title}-sinf</Td>
-								<Td>{item.students.length} nafar</Td>
-								<Td>Guruh {item.group}</Td>
-								<Td>{item.teacher}</Td>
+								<Td>{ind + 1}</Td>
+								<Td>{item.title}-{t('class')}</Td>
+								<Td>{item.students.length} {t('people')}</Td>
+								<Td>{t('group')} {item.group}</Td>
+								<Td w={'200px'} display={'flex'} alignItems={'center'} gap={'5px'}>
+									<Image w={'25px'} h={'25px'} src={item.teacherImage} alt='teacher-image' /> {item.teacher}
+								</Td>
 								<Td cursor={'pointer'} position={'relative'}>
 									<Box
 										w={'35px'}

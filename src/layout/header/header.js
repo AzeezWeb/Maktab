@@ -16,17 +16,24 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { CiDark } from 'react-icons/ci';
 import { MdOutlineLightMode } from 'react-icons/md';
 import { FaAngleDown } from 'react-icons/fa';
 import { language, sidebarItems } from '../../config/constans';
 import { useTranslation } from 'react-i18next';
+
+
 const Header = () => {
 	const location = useLocation();
 	const [languageIcon, setLanguageIcon] = useState(language[0].icon);
 	const { t, i18n } = useTranslation();
+	const navigate = useNavigate()
+
+	const backFunciton = () => {
+		navigate(-1)
+	}
 
 	const onLanguage = lng => {
 		i18n.changeLanguage(lng.lng);
@@ -43,14 +50,14 @@ const Header = () => {
 			display={'flex'}
 			justifyContent={'space-between'}
 			alignItems={'center'}
-			w={'1000px'}
+			w={'100%'}
 			borderRadius={'150px'}
 			h={'55px'}
 			p={'15px'}
 			mt={'15px'}
 		>
 			<HStack>
-				{!active ? <Icon as={FaChevronLeft} /> : null}
+				{!active ? <Icon as={FaChevronLeft} onClick={backFunciton} cursor={'pointer'} /> : null}
 				<Heading fontSize={'20px'}>{t(title[0].name)} </Heading>
 			</HStack>
 			<HStack>

@@ -8,5 +8,21 @@
   "sidebar_title_6": "Jurnal",
   "sidebar_title_7": "KPI",
   "sidebar_exit" : "Chiqish",
-  "header_search_input" : "Qidirish..."
+  "header_search_input" : "Qidirish...",
+  "add_classes" : "Sinf qo'shish",
+  "class_name" : "SINF NOMLARI",
+  "student_numbers": "O'QUCHI SONLARI",
+  "group": "GURUH",
+  "head_of_the_class": "SINF RAXBARI",
+  "full_name": "F.I.SH",
+  "phone_number": "TELEFON RAQAMI",
+  "accaunt_status": "HISOB HOLATI",
+  "student_grants": "O`QUVCHI GRANTLARI",
+  "organized": "Tashkil qilindi",
+  "total_students": "Jami o'quchi",
+  "people": "nafar",
+  "class": "sinf",
+  "editing": "Tahrirlash",
+  "delete": "O'chirish"
+
 }

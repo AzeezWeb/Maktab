@@ -8,5 +8,20 @@
   "sidebar_title_6": "Журнал",
   "sidebar_title_7": "KPI",
   "sidebar_exit" : "Выход",
-  "header_search_input" : "Поиск..."
+  "header_search_input" : "Поиск...",
+  "add_classes" : "Добавить класса",
+  "class_name" : "ИМЕНА КЛАССОВ",
+  "student_numbers": "КОЛИЧЕСТВО СТУДЕНТОВ",
+  "group": "ГРУППА",
+  "head_of_the_class": "РУКОВОДИТЕЛЬ КЛАССА",
+  "full_name": "Ф.И.О",
+  "phone_number": "НОМЕР ТЕЛЕФОНА",
+  "accaunt_status": "СТАТУС АККАУНТА",
+  "student_grants": "СТУДЕНЧЕСКИЕ ГРАНТЫ",
+  "organized": "Организованный",
+  "total_students": "Всего студентов",
+  "people": "человек",
+  "class": "класс",
+  "editing": "Редактирование",
+  "delete": "Удалить"
 }

@@ -4,14 +4,14 @@ import { CiLogin } from 'react-icons/ci';
 import { sidebarItems } from '../../config/constans';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import userIcon from '../../icons/img_avatar1.png'
 const Sidebar = () => {
 	const router = useLocation();
 	const { t } = useTranslation();
 	return (
 		<Box w={'400px'} height={'100vh'} bg={useColorModeValue('#002540', '#0B1C27')}>
 			<HStack spacing={'20px'} p={'15px'} mb={'10px'}>
-				<Image w={'52px'} h={'52px'} src='img_avatar1.png' alt='user_img' />
+				<Image w={'52px'} h={'52px'} src={userIcon} alt='user_img' />
 				<Stack w={'80%'} spacing={'1px'}>
 					<Heading fontSize={'18px'} fontWeight={400} color={'#fff'}>
 						Azizbek Hasanboyev
