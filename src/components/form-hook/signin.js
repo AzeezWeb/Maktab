@@ -1,36 +1,38 @@
 import { Box, Button, Container, Flex, Heading, Icon, Image, Input, Text, useColorModeValue } from '@chakra-ui/react';
-import React, { useState, useTransition } from 'react';
+import React, { useState } from 'react';
 import { FormControl } from '@chakra-ui/react';
 import { CiUser } from 'react-icons/ci';
 import { CiLock } from 'react-icons/ci';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-
 const SignIn = () => {
-
-	const { t } = useTranslation()
-
+	const { t } = useTranslation();
 
 	const [input, setInput] = useState('');
 	const [inputPassword, setInputPassword] = useState('');
-  const navigate =useNavigate()
+	const navigate = useNavigate();
 	const handleInputChange = e => setInput(e.target.value);
 	const handleInputPasswordChange = e => setInputPassword(e.target.value);
 	function errorMessageExample() {
-    if(input !== '' && inputPassword !== '') 
-    navigate('/classes')
-    }
-	
+		if (input !== '' && inputPassword !== '') navigate('/classes');
+	}
 
 	return (
-		<Flex boxShadow={'0px 7px 63px 0px rgba(34, 60, 80, 0.9)'} maxH={'550px'} maxW={'1000px'} m={'55px auto'} overflow={'hidden'} bg={useColorModeValue('#fff', '#1A202C')}>
+		<Flex
+			boxShadow={'0px 7px 63px 0px rgba(34, 60, 80, 0.9)'}
+			maxH={'550px'}
+			maxW={'1000px'}
+			m={'55px auto'}
+			overflow={'hidden'}
+			bg={useColorModeValue('#fff', '#1A202C')}
+		>
 			<Box>
 				<Image w={'100%'} h={'100hv'} src='login.svg' alt='Dan Abramov' />
 			</Box>
 			<Container pt={'80px'} pl={'10px'}>
 				<Heading textAlign={'center'} color={useColorModeValue('#002540', '#0094FF')} pb={'30px'}>
-					{t("login", {ns: 'translate'})}
+					{t('login', { ns: 'translate' })}
 				</Heading>
 
 				<FormControl>
@@ -92,13 +94,15 @@ const SignIn = () => {
 						mt={'70px'}
 						color={'#fff'}
 						textAlign={'center'}
-            _hover={'none'}
+						_hover={'none'}
 						onClick={errorMessageExample}
 					>
-						{t("login", {ns: 'translate'})}
+						{t('login', { ns: 'translate' })}
 					</Button>
 				</FormControl>
-        <Text textAlign='center' color={'#B6B6B6'} position={'absolute'} bottom={'5px'} right={'24%'}>Copyright © 2021 of Tashkent Scholl of Sodiq</Text>
+				<Text textAlign='center' color={'#B6B6B6'} position={'absolute'} bottom={'5px'} right={'24%'}>
+					Copyright © 2021 of Tashkent Scholl of Sodiq
+				</Text>
 			</Container>
 		</Flex>
 	);

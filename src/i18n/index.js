@@ -10,7 +10,7 @@ i18n
 	.init({
 		ns: ['translate', ],
 		backend: { loadPath: '/locales/{{lng}}/{{ns}}.json' },
-		fallbackLng: 'en',
+		fallbackLng: 'uz',
 		interpolation: { escapeValue: false },
 		detection: { order: ['cookie', 'localstorage'], caches: ['cookie'] },
 	});

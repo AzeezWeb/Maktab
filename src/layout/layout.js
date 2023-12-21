@@ -4,11 +4,10 @@ import Sidebar from './sidebar/sidebar';
 import Header from './header/header';
 
 const Layout = ({ children }) => {
-
-	const scrollbarColor = useColorModeValue('#F1F5F8', '#172833')
+	const scrollbarColor = useColorModeValue('#F1F5F8', '#172833');
 
 	return (
-		<Flex maxW='100vw' m={' 0 auto'} gap={'15px'} bg={useColorModeValue('#f1f5f8', '#172833')} overflow={'hidden'}>
+		<Flex maxW='100vw' gap={'15px'} bg={useColorModeValue('#f1f5f8', '#172833')} overflow={'hidden'}>
 			<Sidebar />
 			<Box
 				w={'100vw'}

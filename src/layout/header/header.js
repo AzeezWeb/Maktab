@@ -24,16 +24,17 @@ import { FaAngleDown } from 'react-icons/fa';
 import { language, sidebarItems } from '../../config/constans';
 import { useTranslation } from 'react-i18next';
 
-
 const Header = () => {
 	const location = useLocation();
-	const [languageIcon, setLanguageIcon] = useState(language[0].icon);
 	const { t, i18n } = useTranslation();
-	const navigate = useNavigate()
+	const defaultLanguage = language.filter(l => l.lng === i18n.resolvedLanguage)[0].icon
+	const [languageIcon, setLanguageIcon] = useState(defaultLanguage);
+	console.log(languageIcon);
+	const navigate = useNavigate();
 
 	const backFunciton = () => {
-		navigate(-1)
-	}
+		navigate(-1);
+	};
 
 	const onLanguage = lng => {
 		i18n.changeLanguage(lng.lng);
