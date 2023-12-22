@@ -29,7 +29,6 @@ const Header = () => {
 	const { t, i18n } = useTranslation();
 	const defaultLanguage = language.filter(l => l.lng === i18n.resolvedLanguage)[0].icon
 	const [languageIcon, setLanguageIcon] = useState(defaultLanguage);
-	console.log(languageIcon);
 	const navigate = useNavigate();
 
 	const backFunciton = () => {

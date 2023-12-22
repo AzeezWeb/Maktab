@@ -3,13 +3,15 @@ import { withLayout } from '../../layout/layout';
 import { Box, Button, Icon, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
 import { BsThreeDots } from 'react-icons/bs';
 import { GoPencil } from 'react-icons/go';
-import { data } from '../../data';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useStore from '../../store/store';
 
 const Classes = () => {
+	const { data } = useStore();
 	const navigate = useNavigate();
 	const { t } = useTranslation();
+	
 	const Link = id => {
 		navigate(`/classes/${id}`);
 	};
@@ -75,7 +77,6 @@ const Classes = () => {
 										top={'18%'}
 										textAlign={'center'}
 									>
-										{/* bg={useColorModeValue( '#E0F2FF', '#28485E')}  */}
 										<Icon as={GoPencil} color={'#0094FF'} mt={'5px'} fontSize={'25px'} />
 									</Box>
 								</Td>

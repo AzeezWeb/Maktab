@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withLayout } from '../../../layout/layout';
 import {
 	Box,
@@ -26,8 +26,7 @@ import {
 	useColorModeValue,
 	useDisclosure,
 } from '@chakra-ui/react';
-import { useParams } from 'react-router-dom';
-import { data } from '../../../data';
+import { useNavigate, useParams } from 'react-router-dom';
 import userIcon from '../../../icons/img_avatar1.png';
 import { GoPencil } from 'react-icons/go';
 import { BsThreeDots } from 'react-icons/bs';
@@ -36,32 +35,42 @@ import { IoInformationCircleOutline } from 'react-icons/io5';
 import { convertToUZS } from '../../../helpers/helpers';
 import { useTranslation } from 'react-i18next';
 import StudentInfo from '../../../components/student-Info/student-info';
-
-
+import useStore from '../../../store/store';
 
 const ClassInformation = () => {
+	const { data, deleteClass, deleteStudentFromClass } = useStore();
 	const paramas = useParams();
+	const [students, setStudents] = useState(data.classes.find(c => c.id === paramas.id));
+	const navigate = useNavigate();
 	const { t } = useTranslation();
-	const [students, setStudens] = useState(data.classes.filter(c => c.id === paramas.id)[0]);
 	const [modal, setModal] = useState(false);
 	const [studentId, setStudentId] = useState(null);
+
+	useEffect(() => {
+		const foundStudents = data.classes.find(c => c.id === paramas.id);
+		setStudents(foundStudents);
+	}, [data.classes, paramas.id]);
+
 	const studentInfo = info => {
 		setStudentId(info);
 		setModal(true);
 	};
+
 	const [deletedStudent, setDeletedStudent] = useState(null);
 
-		const deleteStudent = () => {
-		const updatedStudents = students.students.filter(student => student.id !== deletedStudent.id);
-		setStudens({
-			...students,
-			students: updatedStudents,
-		});
-		setDeletedStudent(null)
-		onClose()
+	const deleteStudent = () => {
+		deleteStudentFromClass(students.id, deletedStudent.id);
+		setDeletedStudent(null);
+		onCloseSecond();
 	};
 
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	const deleteClases = cls => {
+		deleteClass(cls);
+		navigate(-1);
+	};
+
+	const { isOpen: isOpenFirst, onOpen: onOpenFirst, onClose: onCloseFirst } = useDisclosure();
+	const { isOpen: isOpenSecond, onOpen: onOpenSecond, onClose: onCloseSecond } = useDisclosure();
 
 	return (
 		<Box position={'relative'}>
@@ -100,6 +109,7 @@ const ClassInformation = () => {
 				letterSpacing={'1px'}
 				lineHeight={'20px'}
 				fontSize={'18px'}
+				onClick={() => onOpenFirst()}
 			>
 				{t('delete')}
 			</Button>
@@ -200,7 +210,7 @@ const ClassInformation = () => {
 											as={MdDeleteOutline}
 											onClick={() => {
 												setDeletedStudent(item);
-												onOpen();
+												onOpenSecond();
 											}}
 											color={'#FA0000'}
 											mt={'5px'}
@@ -217,7 +227,7 @@ const ClassInformation = () => {
 			{modal === true && studentId !== null ? (
 				<StudentInfo studentId={studentId} setStudentId={setStudentId} setModal={setModal} />
 			) : null}
-			<Modal onClose={onClose} isOpen={isOpen} isCentered>
+			<Modal onClose={onCloseSecond} isOpen={isOpenSecond} isCentered>
 				<ModalOverlay />
 				<ModalContent>
 					<ModalBody>
@@ -234,10 +244,35 @@ const ClassInformation = () => {
 						mb={'20px'}
 						textAlign={'center'}
 					>
-						<Button onClick={onClose} borderColor={'#0094FF'}  border={'2px'} outline={'none'} color={'#0094FF'}>
+						<Button onClick={onCloseSecond} borderColor={'#0094FF'} border={'2px'} outline={'none'} color={'#0094FF'}>
 							Yo'q
 						</Button>
 						<Button onClick={deleteStudent} bg={'#0094FF'} color={'#fff'}>
+							Ha
+						</Button>
+					</ModalFooter>
+				</ModalContent>
+			</Modal>
+			<Modal onClose={onCloseFirst} isOpen={isOpenFirst} isCentered>
+				<ModalOverlay />
+				<ModalContent>
+					<ModalBody>
+						<Heading h={'120px'} fontSize={'18px'} lineHeight={'27px'} p={'25px'} textAlign={'center'} fontWeight={600}>
+							Sinf o'chirilishiga rozimisiz ?
+						</Heading>
+					</ModalBody>
+					<ModalFooter
+						display={'flex'}
+						gap={'20px'}
+						alignItems={'center'}
+						justifyContent={'center'}
+						mb={'20px'}
+						textAlign={'center'}
+					>
+						<Button onClick={onCloseFirst} borderColor={'#0094FF'} border={'2px'} outline={'none'} color={'#0094FF'}>
+							Yo'q
+						</Button>
+						<Button onClick={() => deleteClases(students.id)} bg={'#0094FF'} color={'#fff'}>
 							Ha
 						</Button>
 					</ModalFooter>
