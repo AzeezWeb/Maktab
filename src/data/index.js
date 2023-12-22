@@ -1,4 +1,5 @@
  import userIcon from '../icons/img_avatar1.png';
+ import { v4 as uuidv4 } from 'uuid';
 
 
 export const data = {
@@ -13,7 +14,7 @@ export const data = {
       students: [
         
         {
-          id: 'zoir',
+          id: 'zor',
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -31,7 +32,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -49,7 +50,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -67,7 +68,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -85,7 +86,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -103,7 +104,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -121,7 +122,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -139,7 +140,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -167,7 +168,7 @@ export const data = {
       groupDeta: '16.12.2023',
       students: [
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -185,7 +186,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -203,7 +204,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -221,7 +222,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -239,7 +240,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -257,7 +258,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -275,7 +276,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -293,7 +294,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -311,7 +312,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -329,7 +330,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -347,7 +348,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -365,7 +366,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -393,7 +394,7 @@ export const data = {
       groupDeta: '16.12.2023',
       students: [
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -411,7 +412,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -429,7 +430,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -447,7 +448,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -465,7 +466,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -483,7 +484,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -501,7 +502,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -519,7 +520,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -537,7 +538,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
@@ -555,7 +556,7 @@ export const data = {
           generation. Ronaldo's father, José Dinis Aveiro, was the`,
         },
         {
-          id: 'zoir',
+          id: uuidv4(),
           userName: 'zoir_s',
           firstName: 'Zoir',
           lastName: 'Tursunov',
