@@ -1,7 +1,6 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import Sidebar from './sidebar/sidebar';
-import Header from './header/header';
 
 const Layout = ({ children }) => {
 	const scrollbarColor = useColorModeValue('#F1F5F8', '#172833');
@@ -27,7 +26,6 @@ const Layout = ({ children }) => {
 					},
 				}}
 			>
-				<Header />
 				{children}
 			</Box>
 		</Flex>

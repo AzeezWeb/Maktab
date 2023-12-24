@@ -16,16 +16,16 @@ import {
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { CiSearch } from 'react-icons/ci';
 import { CiDark } from 'react-icons/ci';
 import { MdOutlineLightMode } from 'react-icons/md';
 import { FaAngleDown } from 'react-icons/fa';
-import { language, sidebarItems } from '../../config/constans';
+import { language } from '../../config/constans';
 import { useTranslation } from 'react-i18next';
 
-const Header = () => {
-	const location = useLocation();
+const Header = ({ title, active }) => {
+	// const location = useLocation();
 	const { t, i18n } = useTranslation();
 	const defaultLanguage = language.filter(l => l.lng === i18n.resolvedLanguage)[0].icon
 	const [languageIcon, setLanguageIcon] = useState(defaultLanguage);
@@ -40,8 +40,6 @@ const Header = () => {
 		setLanguageIcon(lng.icon);
 	};
 
-	const active = sidebarItems.some(path => `/${path.link}` === location.pathname);
-	const title = sidebarItems.filter(path => location.pathname.split('/')[1] === path.link);
 	const { toggleColorMode, colorMode } = useColorMode();
 
 	return (
@@ -58,7 +56,7 @@ const Header = () => {
 		>
 			<HStack>
 				{!active ? <Icon as={FaChevronLeft} onClick={backFunciton} cursor={'pointer'} /> : null}
-				<Heading fontSize={'20px'}>{t(title[0].name)} </Heading>
+				<Heading fontSize={'20px'}>{title} </Heading>
 			</HStack>
 			<HStack>
 				<HStack

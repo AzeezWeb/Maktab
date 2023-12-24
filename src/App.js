@@ -9,7 +9,25 @@ import Journal from './pages/journal/journal';
 import Kpi from './pages/kpi/kpi';
 import SignIn from './components/form-hook/signin';
 import ClassInformation from './pages/classes/classInformation/classInformation';
+import AddClass from './pages/addClass/addClass';
+import useStore from './store/store';
+import { useEffect } from 'react';
 function App() {
+
+	const { loadFromLocalStorage, saveToLocalStorage, checkAndLoadFromLocalStorage } = useStore();
+
+  useEffect(() => {
+    loadFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    saveToLocalStorage();
+  }, [saveToLocalStorage]);
+
+	useEffect(() => {
+		// localStorage dan malumotlarni yuklash
+		checkAndLoadFromLocalStorage();
+	}, []);
 	return (
 		<Routes>
 			<Route path='/' element={<SignIn />} />
@@ -21,6 +39,7 @@ function App() {
 			<Route path='journal' element={<Journal />} />
 			<Route path='kpi' element={<Kpi />} />
 			<Route path='classes/:id' element={<ClassInformation/>} />
+			<Route path='AddClass' element={<AddClass/>} />
 		</Routes>
 	);
 }
