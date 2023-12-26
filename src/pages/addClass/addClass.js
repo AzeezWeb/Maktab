@@ -68,6 +68,7 @@ const AddClass = () => {
 		addClass(newClass);
 		navigate(-1);
 	};
+	console.log(data);
 	return (
 		<>
 			<Header active={false} title={`Sinf qo'shish`} />
@@ -206,6 +207,7 @@ const AddClass = () => {
 							letterSpacing={'1px'}
 							lineHeight={'20px'}
 							fontSize={'15px'}
+							onClick={() => navigate(-1)}
 						>
 							Bekor qilish
 						</Button>
@@ -247,7 +249,9 @@ const AddClass = () => {
 					<Tbody>
 						<Tr cursor={'pointer'} alignItems={'flex-start'} verticalAlign={'start'} justifyContent={'flex-start'}>
 							<Td>{selectedClass}</Td>
-							<Td>{selectedTeacher[0]?.teacher?.firstName + ' ' + selectedTeacher[0]?.teacher?.lastName}</Td>
+							<Td>{selectedTeacher.length !== 0
+									? filteredTeacher[0]?.firstName + ' ' + filteredTeacher[0]?.lastName
+									: ``}</Td>
 							<Td>
 								{filteredSciences?.map(sc => (
 									<Text mr={'10px'} mb={'10px'} key={sc.id}>

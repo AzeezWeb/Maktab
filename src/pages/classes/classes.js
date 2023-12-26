@@ -26,11 +26,10 @@ const Classes = () => {
 	const { data } = useStore();
 	const navigate = useNavigate();
 	const { t } = useTranslation();
-	console.log(data.classes);
 	const LinkTo = id => {
 		navigate(`/classes/${id}`);
 	};
-
+	console.log(data);
 	return (
 		<>
 			<Header active={true} title={'Sinflar'} />
@@ -47,7 +46,7 @@ const Classes = () => {
 					top={'-50px'}
 					right={'0px'}
 				>
-					<Link href='AddClass'>+ {t('add_classes')}</Link>
+					<Link href='addClass'>+ {t('add_classes')}</Link>
 				</Button>
 
 				<TableContainer mt={'60px'} bg={useColorModeValue('#fff', '#2C3B46')} borderRadius={'15px'}>

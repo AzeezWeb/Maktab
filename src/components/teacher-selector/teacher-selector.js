@@ -5,7 +5,7 @@ const TeacherSelector = ({ isOpen, onOpen, onClose, items, onSelect, selectedIte
 
   const handleToggle = (itemId) => {
     onSelect((prevSelected) => {
-      const isSelected = prevSelected.includes(itemId);
+      const isSelected = prevSelected?.includes(itemId);
 
       if (isSelected) {
         return prevSelected.filter((id) => id !== itemId);

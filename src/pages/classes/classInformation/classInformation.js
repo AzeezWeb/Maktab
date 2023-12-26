@@ -78,7 +78,7 @@ const ClassInformation = () => {
 			<Header active={false} title={`Sinf ma'lumotlari`} />
 			<Box position={'relative'}>
 				<Heading fontSize={'35px'} fontWeight={'500'} pl={'15px'} pt={'25px'} color={useColorModeValue('#002540', '#fff')}>
-					{students.class}- sinf
+					{students?.class}- sinf
 				</Heading>
 				<Button
 					w={'166px'}
@@ -94,6 +94,7 @@ const ClassInformation = () => {
 					letterSpacing={'1px'}
 					lineHeight={'20px'}
 					fontSize={'18px'}
+					onClick={() => navigate(`/classes/editing-class/${students.id}`)}
 				>
 					{t('editing')}
 				</Button>
@@ -128,7 +129,7 @@ const ClassInformation = () => {
 								lineHeight={'21px'}
 								color={useColorModeValue('#002540', '#fff')}
 							>
-								{students.teacher.firstName}
+								{students?.teacher?.firstName + " " + students?.teacher?.lastName}
 							</Heading>
 							<Text color={'#C7C7C7'} fontSize={'14px'} fontWeight={'500'} lineHeight={'18px'}>
 								Kurator
@@ -144,7 +145,7 @@ const ClassInformation = () => {
 							{t('organized')} :
 						</Heading>
 						<Text size={'md'} color={useColorModeValue('#413F3F', '#fff')}>
-							{students.groupDeta}
+							{students?.groupDeta}
 						</Text>
 					</HStack>
 					<HStack>
@@ -152,7 +153,7 @@ const ClassInformation = () => {
 							{t('total_students')} :
 						</Heading>
 						<Text size={'md'} color={useColorModeValue('#413F3F', '#fff')}>
-							{students.students.length} nafar
+							{students?.students?.length} nafar
 						</Text>
 					</HStack>
 				</Box>
@@ -182,7 +183,7 @@ const ClassInformation = () => {
 							</Tr>
 						</Thead>
 						<Tbody>
-							{students.students.map((item, ind) => (
+							{students?.students.map((item, ind) => (
 								<Tr>
 									<Td>{ind + 1}</Td>
 									<Td w={'200px'} display={'flex'} alignItems={'center'} gap={'5px'}>
@@ -235,7 +236,7 @@ const ClassInformation = () => {
 					<ModalContent>
 						<ModalBody>
 							<Heading h={'120px'} fontSize={'18px'} lineHeight={'27px'} p={'25px'} textAlign={'center'} fontWeight={600}>
-								Haqiqatdan ham {deletedStudent?.firstName + ' ' + deletedStudent?.lastName} ni {students.title} - sinfidan
+								Haqiqatdan ham {deletedStudent?.firstName + ' ' + deletedStudent?.lastName} ni {students?.title} - sinfidan
 								o'chirmoqchimisiz ?{' '}
 							</Heading>
 						</ModalBody>

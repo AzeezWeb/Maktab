@@ -53,6 +53,31 @@ const useStore = create((set) => {
         saveToLocalStorage(); 
         return { data: updatedData };
       }),
+
+      updateClass: (classId, updatedClass) =>
+      set((state) => {
+        
+        const classToUpdate = state.data.classes.find((cls) => cls.id === classId);
+        
+        if (!classToUpdate) {
+          console.error(`Class with ID ${classId} not found.`);
+          return state;
+        }
+
+       
+        const updatedData = {
+          ...state.data,
+          classes: state.data.classes.map((cls) =>
+            cls.id === classId ? { ...cls, ...updatedClass } : cls
+          ),
+        };
+
+    
+        localStorage.setItem('school_data', JSON.stringify(updatedData));
+
+        return { data: updatedData };
+      }),  
+
     deleteStudentFromClass: (classId, studentId) =>
       set((state) => {
         const updatedClasses = state.data.classes.map((cls) => {

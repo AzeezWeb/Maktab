@@ -4,7 +4,7 @@ import Classes from './pages/classes/classes';
 import Teachers from './pages/teachers/teachers';
 import Students from './pages/students/students';
 import Sciences from './pages/sciences/sciences';
-import LessonSchedule from './pages/lessonSchedule/lessonSchedule';
+import LessonSchedule from './pages/lesson-schedule/lessonSchedule'
 import Journal from './pages/journal/journal';
 import Kpi from './pages/kpi/kpi';
 import SignIn from './components/form-hook/signin';
@@ -12,6 +12,7 @@ import ClassInformation from './pages/classes/classInformation/classInformation'
 import AddClass from './pages/addClass/addClass';
 import useStore from './store/store';
 import { useEffect } from 'react';
+import EditingClass from './pages/editing-class/editing-class';
 function App() {
 
 	const { loadFromLocalStorage, saveToLocalStorage, checkAndLoadFromLocalStorage } = useStore();
@@ -39,7 +40,8 @@ function App() {
 			<Route path='journal' element={<Journal />} />
 			<Route path='kpi' element={<Kpi />} />
 			<Route path='classes/:id' element={<ClassInformation/>} />
-			<Route path='AddClass' element={<AddClass/>} />
+			<Route path='addClass' element={<AddClass/>} />
+			<Route path='classes/editing-class/:classId' element={<EditingClass/>} />
 		</Routes>
 	);
 }
