@@ -46,7 +46,6 @@ const ClassInformation = () => {
 	const { t } = useTranslation();
 	const [modal, setModal] = useState(false);
 	const [studentId, setStudentId] = useState(null);
-
 	useEffect(() => {
 		const foundStudents = data.classes.find(c => c.id === paramas.id);
 		setStudents(foundStudents);
@@ -72,7 +71,6 @@ const ClassInformation = () => {
 
 	const { isOpen: isOpenFirst, onOpen: onOpenFirst, onClose: onCloseFirst } = useDisclosure();
 	const { isOpen: isOpenSecond, onOpen: onOpenSecond, onClose: onCloseSecond } = useDisclosure();
-	console.log(students);
 	return (
 		<>
 			<Header active={false} title={`Sinf ma'lumotlari`} />
@@ -145,7 +143,7 @@ const ClassInformation = () => {
 							{t('organized')} :
 						</Heading>
 						<Text size={'md'} color={useColorModeValue('#413F3F', '#fff')}>
-							{students?.groupDeta}
+							{students?.createdDate}
 						</Text>
 					</HStack>
 					<HStack>
@@ -184,7 +182,7 @@ const ClassInformation = () => {
 						</Thead>
 						<Tbody>
 							{students?.students.map((item, ind) => (
-								<Tr>
+								<Tr key={ind}>
 									<Td>{ind + 1}</Td>
 									<Td w={'200px'} display={'flex'} alignItems={'center'} gap={'5px'}>
 										<Image w={'25px'} h={'25px'} src={item.image} alt='teacher-image' /> {item.firstName + ' ' + item.lastName}

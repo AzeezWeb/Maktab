@@ -52,13 +52,7 @@ const EditingClass = () => {
 			setSelectedStudents(prev => [...prev, student]);
 		}
 	};
-	const onSelectAllStudents = () => {
-		if (selectedStudents?.length === filteredData.students.length) {
-			setSelectedStudents([]);
-		} else {
-			setSelectedStudents([...filteredData.students]);
-		}
-	};
+
 
 	const deleteStudents = () => {
 		const newStudents = {
@@ -74,13 +68,6 @@ const EditingClass = () => {
 			setSelectedSciences(prev => prev.filter(s => s !== sciences));
 		} else {
 			setSelectedSciences(prev => [...prev, sciences]);
-		}
-	};
-	const onSelectAllSciences = () => {
-		if (selectedSciences?.length === filteredData.sciences.length) {
-			setSelectedSciences([]);
-		} else {
-			setSelectedSciences([...filteredData.sciences]);
 		}
 	};
 
@@ -103,12 +90,12 @@ const EditingClass = () => {
     const id = filteredData?.id;
     const updatedClass = {
       ...filteredData,
-      class: selectedClass,
-      room: selectedRoom,
+      // class: selectedClass,
+      // room: selectedRoom,
     };
-  
+		console.log(updatedClass);
     updateClass(id, updatedClass);
-    navigate(-1); 
+    // navigate(-1); 
   };
 	return (
 		<Box>
@@ -138,7 +125,6 @@ const EditingClass = () => {
 						students={filteredData?.students || []}
 						onSelectStudent={onSelectStudent}
 						selectedStudents={selectedStudents}
-						onSelectAllStudents={onSelectAllStudents}
 					/>
 				</Box>
 				<Box height='80vh' w={'350px'} p={'10px'} bg={useColorModeValue('#F1F5F8', '#3A4B56')}>
@@ -166,7 +152,6 @@ const EditingClass = () => {
 						sciences={filteredData?.sciences}
 						onSelectSciences={onSelectSciences}
 						selectedSciences={selectedSciences}
-						onSelectAllSciences={onSelectAllSciences}
 					/>
 				</Box>
 				<Box height='80vh' w={'255px'} position={'relative'} bg={useColorModeValue('#fff', 'transparent')}>

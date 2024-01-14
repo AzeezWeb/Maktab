@@ -26,13 +26,14 @@ function App() {
   }, [saveToLocalStorage]);
 
 	useEffect(() => {
-		// localStorage dan malumotlarni yuklash
+		
 		checkAndLoadFromLocalStorage();
 	}, []);
 	return (
 		<Routes>
 			<Route path='/' element={<SignIn />} />
 			<Route path='classes' element={<Classes />} />
+			<Route path='classes/addClass' element={<AddClass/>} />
 			<Route path='teachers'  element={<Teachers />} />
 			<Route path='students' element={<Students />} />
 			<Route path='sciences' element={<Sciences />} />
@@ -40,7 +41,6 @@ function App() {
 			<Route path='journal' element={<Journal />} />
 			<Route path='kpi' element={<Kpi />} />
 			<Route path='classes/:id' element={<ClassInformation/>} />
-			<Route path='addClass' element={<AddClass/>} />
 			<Route path='classes/editing-class/:classId' element={<EditingClass/>} />
 		</Routes>
 	);

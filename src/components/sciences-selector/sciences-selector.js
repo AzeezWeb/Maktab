@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-	Button,
 	Modal,
 	ModalOverlay,
 	ModalContent,
@@ -11,6 +10,8 @@ import {
 	Text,
 	Flex,
 } from '@chakra-ui/react';
+import ButtonOutline from '../button-outline/button-outline';
+import ButtonSolid from '../button-solid/button-solid';
 
 const SciencesSelector = ({ isOpen, onOpen, onClose, items, onSelect, selectedItems }) => {
 	const handleToggle = itemId => {
@@ -52,12 +53,12 @@ const SciencesSelector = ({ isOpen, onOpen, onClose, items, onSelect, selectedIt
 						))}
 					</ModalBody>
 					<ModalFooter>
-						<Button onClick={onClose} color={'#0094ff'} mr={'15px'} border={'1px'} borderColor={'#0094FF'} bg={'transparent'}>
+						<ButtonOutline mr="10px" onClick={onClose} >
 							Yopish
-						</Button>
-						<Button bg={'#0094FF'} mr={3} color={'#fff'} onClick={handleSave}>
+						</ButtonOutline>
+						<ButtonSolid onClick={handleSave}>
 							Saqlash
-						</Button>
+						</ButtonSolid>
 					</ModalFooter>
 				</ModalContent>
 			</Modal>

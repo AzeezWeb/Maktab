@@ -1,5 +1,7 @@
 import React from 'react'
-import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,  HStack, Text, Image, Flex, } from '@chakra-ui/react';
+import {  Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody,  HStack, Text, Image, Flex, } from '@chakra-ui/react';
+import ButtonOutline from '../button-outline/button-outline';
+import ButtonSolid from '../button-solid/button-solid';
 
 
 const StudentSelector = ( {isOpen, onOpen, onClose, items, onSelect, selectedItems } ) => {
@@ -45,10 +47,10 @@ const StudentSelector = ( {isOpen, onOpen, onClose, items, onSelect, selectedIte
             ))}
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose} color={'#0094ff'} mr={'15px'} border={'1px'} borderColor={'#0094FF'} bg={'transparent'}>Yopish</Button>
-            <Button bg={'#0094FF'} mr={3} color={'#fff'} onClick={handleSave}>
-              Saqlash
-            </Button>
+          <ButtonOutline onClick={onClose} mr={'15px'}>
+							Yopish
+						</ButtonOutline>
+						<ButtonSolid onClick={handleSave}>Saqlash</ButtonSolid>
           </ModalFooter>
         </ModalContent>
       </Modal>

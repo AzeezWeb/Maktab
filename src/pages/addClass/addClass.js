@@ -25,6 +25,8 @@ import StudentSelector from '../../components/student-selector/student-selector'
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import SciencesSelector from '../../components/sciences-selector/sciences-selector';
+import ButtonSolid from '../../components/button-solid/button-solid';
+import ButtonOutline from '../../components/button-outline/button-outline';
 
 
 const AddClass = () => {
@@ -37,12 +39,17 @@ const AddClass = () => {
 	const [selectedClass, setSelectedClass] = useState(null);
 	const [selectedTeacher, setSelectedTeacher] = useState([]);
 	const [selectedScience, setSelectedScience] = useState([]);
+
 	const [selectedStudents, setSelectedStudents] = useState([]);
+
 	const [selectedRoom, setSelectdRoom] = useState(null);
 
 	const filteredTeacher = data.teachers.filter(teacher => selectedTeacher.includes(teacher.id));
 	const filteredStudents = data.students.filter(student => selectedStudents.includes(student.id));
 	const filteredSciences = data.sciences.filter(sciences => selectedScience.includes(sciences.id));
+
+
+	
 
 	const addNewClass = () => {
 		const currentDate = new Date();
@@ -68,7 +75,6 @@ const AddClass = () => {
 		addClass(newClass);
 		navigate(-1);
 	};
-	console.log(data);
 	return (
 		<>
 			<Header active={false} title={`Sinf qo'shish`} />
@@ -198,30 +204,8 @@ const AddClass = () => {
 						/>
 					</Box>
 					<Flex w={'255px'} height='70px' pt={'33px'} justifyContent={'space-between'}>
-						<Button
-							height={'45px'}
-							textAlign={'center'}
-							color={'#0094ff'}
-							borderColor={'#0094FF'}
-							border={'1px'}
-							letterSpacing={'1px'}
-							lineHeight={'20px'}
-							fontSize={'15px'}
-							onClick={() => navigate(-1)}
-						>
-							Bekor qilish
-						</Button>
-						<Button
-							onClick={addNewClass}
-							bg={'#0094FF'}
-							height={'45px'}
-							color={'#fff'}
-							letterSpacing={'1px'}
-							lineHeight={'20px'}
-							fontSize={'15px'}
-						>
-							Saqlash
-						</Button>
+						<ButtonOutline onClick={() => navigate(-1)}>Bekor qilish</ButtonOutline>
+						<ButtonSolid onClick={addNewClass}>Saqlash</ButtonSolid>
 					</Flex>
 				</SimpleGrid>
 			</Box>
@@ -249,9 +233,7 @@ const AddClass = () => {
 					<Tbody>
 						<Tr cursor={'pointer'} alignItems={'flex-start'} verticalAlign={'start'} justifyContent={'flex-start'}>
 							<Td>{selectedClass}</Td>
-							<Td>{selectedTeacher.length !== 0
-									? filteredTeacher[0]?.firstName + ' ' + filteredTeacher[0]?.lastName
-									: ``}</Td>
+							<Td>{selectedTeacher.length !== 0 ? filteredTeacher[0]?.firstName + ' ' + filteredTeacher[0]?.lastName : ``}</Td>
 							<Td>
 								{filteredSciences?.map(sc => (
 									<Text mr={'10px'} mb={'10px'} key={sc.id}>

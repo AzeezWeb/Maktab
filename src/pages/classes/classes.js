@@ -2,7 +2,6 @@ import React from 'react';
 import { withLayout } from '../../layout/layout';
 import {
 	Box,
-	Button,
 	Icon,
 	Link,
 	Image,
@@ -21,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useStore from '../../store/store';
 import Header from '../../components/header/header';
+import ButtonSolid from '../../components/button-solid/button-solid';
 
 const Classes = () => {
 	const { data } = useStore();
@@ -29,15 +29,12 @@ const Classes = () => {
 	const LinkTo = id => {
 		navigate(`/classes/${id}`);
 	};
-	console.log(data);
 	return (
 		<>
 			<Header active={true} title={'Sinflar'} />
 			<Box w={'100%'} position={'relative'}>
-				<Button
+				<ButtonSolid
 					borderRadius={'50px'}
-					bg={'#0094FF'}
-					color={'#fff'}
 					fontSize={'20px'}
 					minW={'166px'}
 					p={'10px'}
@@ -45,9 +42,10 @@ const Classes = () => {
 					position={'absolute'}
 					top={'-50px'}
 					right={'0px'}
+					
 				>
-					<Link href='addClass'>+ {t('add_classes')}</Link>
-				</Button>
+					<Link _hover={'none'} href='/classes/addClass'>+ {t('add_classes')}</Link>
+				</ButtonSolid>
 
 				<TableContainer mt={'60px'} bg={useColorModeValue('#fff', '#2C3B46')} borderRadius={'15px'}>
 					<Table size='md'>

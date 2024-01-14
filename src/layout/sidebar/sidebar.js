@@ -26,13 +26,14 @@ const Sidebar = () => {
 			<Stack pt={'20px'}>
 				{sidebarItems.map((item, ind) => {
 					const active = router.pathname.split('/')[1] === item.link;
+					
 					return (
-						<HStack key={ind} spacing={'15px'} w={'70%'} p={'10px'} borderRightRadius={'25px'} bg={active ? '#0094FF' : null}>
+						<Link  _hover={'none'} href={`/${item.link}`} key={ind} display={'flex'} alignItems={'center'} gap={'10px'} w={'200px'} p={'10px'} borderRightRadius={'25px'} bg={active ? '#0094FF' : null}>
 							<Icon color={'#fff'} fontSize={'28px'} ml={'15px'} as={item.icon} />
-							<Link _hover={'none'} href={`/${item.link}`} color={'#fff'} fontSize={'18px'} lineHeight={'21px'} fontWeight={400}>
+							<Text color={'#fff'} fontSize={'18px'} lineHeight={'21px'} fontWeight={400}>
 								{t(item.name)}
-							</Link>
-						</HStack>
+							</Text>
+						</Link>
 					);
 				})}
 			</Stack>
